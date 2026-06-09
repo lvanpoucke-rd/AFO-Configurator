@@ -278,7 +278,7 @@ function redrawZone(zone){
     ctx.fillRect(0,0,W,H);
     ctx.globalCompositeOperation='source-over';
     canvases[zone].style.mixBlendMode='multiply';
-    canvases[zone].style.opacity='0.90';
+    canvases[zone].style.opacity='0.95';
   } else {
     loadImg(s.src).then(patImg=>{
       ctx.clearRect(0,0,W,H);
