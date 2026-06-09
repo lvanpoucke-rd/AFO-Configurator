@@ -255,8 +255,8 @@ function redrawZone(zone){
     ctx.fillRect(0,0,W,H);
     ctx.globalCompositeOperation = 'source-over';
     // 3. Blend: set canvas to multiply in CSS
-    canvases[zone].style.mixBlendMode = 'color';
-    canvases[zone].style.opacity = '1.0';
+    canvases[zone].style.mixBlendMode = 'multiply';
+    canvases[zone].style.opacity = '0.95';
   } else {
     // pattern
     loadImg(s.src).then(patImg => {
@@ -275,8 +275,8 @@ function redrawZone(zone){
       ctx.fillRect(0,0,W/scale,H/scale);
       ctx.restore();
       ctx.globalCompositeOperation = 'source-over';
-      canvases[zone].style.mixBlendMode = 'color';
-      canvases[zone].style.opacity = '1.0';
+      canvases[zone].style.mixBlendMode = 'multiply';
+      canvases[zone].style.opacity = '0.95';
     });
   }
 }
