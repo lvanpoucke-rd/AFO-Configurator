@@ -264,7 +264,7 @@ function applyColor(zone, hex, name, code){
 function applyPattern(zone, src, idx){
   sel[zone] = {type:'pattern',src,idx};
   redrawZone(zone);
-  updateStatus(zone,'Motief '+(idx+1));
+  updateStatus(zone,'Pattern '+(idx+1));
 }
 
 function redrawZone(zone){
