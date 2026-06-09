@@ -353,7 +353,7 @@ function buildLaceGrid(){
     const div = document.createElement('div');
     div.className = 'lswatch';
     div.style.backgroundImage = `url(${src})`;
-    div.title = `Veter ${i+1}`;
+    div.title = `Lace ${i+1}`;
     div.addEventListener('click',()=>{
       grid.querySelectorAll('.lswatch').forEach(s=>s.classList.remove('active'));
       div.classList.add('active');
