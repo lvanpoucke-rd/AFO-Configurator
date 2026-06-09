@@ -345,7 +345,7 @@ function buildPatternGrid(){
     const div=document.createElement('div');
     div.className='pswatch';
     div.style.backgroundImage=`url(${src})`;
-    div.title='Motief '+(i+1);
+    div.title='Pattern '+(i+1);
     div.addEventListener('click',()=>{
       grid.querySelectorAll('.pswatch').forEach(s=>s.classList.remove('active'));
       div.classList.add('active');
