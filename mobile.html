@@ -264,7 +264,7 @@ function applyColor(zone, hex, name, code){
 function applyPattern(zone, src, idx){
   sel[zone] = {type:'pattern',src,idx};
   redrawZone(zone);
-  updateStatus(zone,'Pattern '+(idx+1));
+  updateStatus(zone, PATTERN_NAMES[idx] || 'Motief '+(idx+1));
 }
 
 function redrawZone(zone){
@@ -338,6 +338,58 @@ function buildColorGrid(id, colors, zone){
     grid.appendChild(wrap);
   });
 }
+const PATTERN_NAMES = [
+  'Elephant',          // 1
+  'Sea',               // 2
+  'Fish',              // 3
+  'Love Bugs',         // 4
+  'Cats',              // 5
+  'Animals',           // 6
+  'Animal Kids',       // 7
+  'Butterfly',         // 8
+  'Owl',               // 9
+  'Tortugas',          // 10
+  'Ducks',             // 11
+  'Angels',            // 12
+  'School 5',          // 13
+  'School 1',          // 14
+  'Bicycle',           // 15
+  'Drawing 1',         // 16
+  'Football',          // 17
+  'Basket',            // 18
+  'Peace',             // 19
+  'Animals 2',         // 20
+  'Drawing 2',         // 21
+  'Aeroplanes',        // 22
+  'Aeroplanes 2',      // 23
+  'Flowers 2',         // 24
+  'Flowers 3',         // 25
+  'Traffic 1',         // 26
+  'Hearts 2',          // 27
+  'Flowers 1',         // 28
+  'Fashion',           // 29
+  'Hearts 1',          // 30
+  'Camouflage Green',  // 31
+  'Puzzle',            // 32
+  'Stars',             // 33
+  'Carbon Print',      // 34
+  'Army',              // 35
+  'Sky',               // 36
+  'Licorne',           // 37
+  'Music',             // 38
+  'Words',             // 39
+  'Jeans',             // 40
+  'Clouds',            // 41
+  'Jeans 2',           // 42
+  'Skin 4',            // 43
+  'Water',             // 44
+  'Smile',             // 45
+  'Hero Mask',         // 46
+  'Comic 2',           // 47
+  'UFOs',              // 48
+  'Astronaut',         // 49
+  'Unicorn',           // 50
+];
 
 function buildPatternGrid(){
   const grid=document.getElementById('grid-patterns');
@@ -345,7 +397,7 @@ function buildPatternGrid(){
     const div=document.createElement('div');
     div.className='pswatch';
     div.style.backgroundImage=`url(${src})`;
-    div.title='Pattern '+(i+1);
+    div.title=PATTERN_NAMES[i] || 'Motief '+(i+1);
     div.addEventListener('click',()=>{
       grid.querySelectorAll('.pswatch').forEach(s=>s.classList.remove('active'));
       div.classList.add('active');
