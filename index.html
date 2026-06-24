@@ -327,56 +327,56 @@ function buildColorGrid(containerId, colors, zone){
   });
 }
 const PATTERN_NAMES = [
-  'Elephant',          // 1
-  'Sea',               // 2
-  'Fish',              // 3
-  'Love Bugs',         // 4
-  'Cats',              // 5
-  'Animals',           // 6
-  'Animal Kids',       // 7
-  'Butterfly',         // 8
-  'Owl',               // 9
-  'Tortugas',          // 10
-  'Ducks',             // 11
-  'Angels',            // 12
-  'School 5',          // 13
-  'School 1',          // 14
-  'Bicycle',           // 15
-  'Drawing 1',         // 16
-  'Football',          // 17
-  'Basket',            // 18
-  'Peace',             // 19
-  'Animals 2',         // 20
-  'Drawing 2',         // 21
-  'Aeroplanes',        // 22
-  'Aeroplanes 2',      // 23
-  'Flowers 2',         // 24
-  'Flowers 3',         // 25
-  'Traffic 1',         // 26
-  'Hearts 2',          // 27
-  'Flowers 1',         // 28
-  'Fashion',           // 29
-  'Hearts 1',          // 30
-  'Camouflage Green',  // 31
-  'Puzzle',            // 32
-  'Stars',             // 33
-  'Carbon Print',      // 34
-  'Army',              // 35
-  'Sky',               // 36
-  'Licorne',           // 37
-  'Music',             // 38
-  'Words',             // 39
-  'Jeans',             // 40
-  'Clouds',            // 41
-  'Jeans 2',           // 42
-  'Skin 4',            // 43
-  'Water',             // 44
-  'Smile',             // 45
-  'Hero Mask',         // 46
-  'Comic 2',           // 47
-  'UFOs',              // 48
-  'Astronaut',         // 49
-  'Unicorn',           // 50
+  'Elephant 108137',          // 1
+  'Sea 108136',               // 2
+  'Fish 108149',              // 3
+  'Love Bugs 108146',         // 4
+  'Cats 108144',              // 5
+  'Animals 108148',           // 6
+  'Animal Kids 108137',       // 7
+  'Butterfly 108147',         // 8
+  'Owl 108145',               // 9
+  'Tortugas 108151',          // 10
+  'Ducks 108152',             // 11
+  'Angels 108150',            // 12
+  'School 5 108127',          // 13
+  'School 1 108126',          // 14
+  'Bicycle 108142',           // 15
+  'Drawing 1 108154',         // 16
+  'Football 108143',          // 17
+  'Basket 108141',            // 18
+  'Peace 108165',             // 19
+  'Animals 2 108153',         // 20
+  'Drawing 2 108155',         // 21
+  'Aeroplanes 1 108133',        // 22
+  'Aeroplanes 2 108134',      // 23
+  'Flowers 2 108161',         // 24
+  'Flowers 3 108159',         // 25
+  'Traffic 1 108140',         // 26
+  'Hearts 2 172350',          // 27
+  'Flowers 1 108160',         // 28
+  'Fashion 108129',           // 29
+  'Hearts 1 108164',          // 30
+  'Camouflage Green 108162',  // 31
+  'Puzzle 108158',            // 32
+  'Stars 108135',             // 33
+  'Carbon Print 162242',      // 34
+  'Army 108163',              // 35
+  'Sky 172318',               // 36
+  'Licorne 172322',           // 37
+  'Music 108125',             // 38
+  'Words 108128',             // 39
+  'Jeans 108138',             // 40
+  'Clouds 108132',            // 41
+  'Jeans 2 172682',           // 42
+  'Skin 4 172355',            // 43
+  'Water 108131',             // 44
+  'Smile 108157',             // 45
+  'Hero Mask 172354',         // 46
+  'Comic 2 172310',           // 47
+  'UFOs 172350',              // 48
+  'Astronaut 172302',         // 49
+  'Unicorn 172309',           // 50
 ];
 // Pattern grid
 function buildPatternGrid(){
@@ -397,6 +397,24 @@ function buildPatternGrid(){
 }
 
 // Lace images grid
+const LACE_NAMES = [
+  'Black 183174',      // 1
+  'Red 183181',        // 2
+  'Soft Pink 186180',  // 3
+  'Orange 183182',     // 4
+  'Marine 183179',     // 5
+  'Light Blue 183178', // 6
+  'Grey 183177',       // 7
+  'Grass 183184',      // 8
+  'Magenta 184557',    // 9
+  'Yellow 183183',     // 10
+  'Dark Green 183186', // 11
+  'Dark Blue 184261',  // 12
+  'Cognac 183176',     // 13
+  'Beige 184728',      // 14
+  'White 183175',      // 15
+];
+  
 function buildLaceGrid(){
   const grid = document.getElementById('grid-laces');
   // Use actual images from docx
@@ -404,7 +422,7 @@ function buildLaceGrid(){
     const div = document.createElement('div');
     div.className = 'lswatch';
     div.style.backgroundImage = `url(${src})`;
-    div.title = `Lace ${i+1}`;
+    div.title =LACE_NAMES[i] || 'Veter '+(i+1);
     div.addEventListener('click',()=>{
       grid.querySelectorAll('.lswatch').forEach(s=>s.classList.remove('active'));
       div.classList.add('active');
@@ -418,6 +436,7 @@ function buildLaceGrid(){
         tmpX.drawImage(img,0,0,20,20);
         const d = tmpX.getImageData(10,10,1,1).data;
         const hex = '#'+[d[0],d[1],d[2]].map(v=>v.toString(16).padStart(2,'0')).join('');
+        const name=LACE_NAMES[i] || 'Veter '+(i+1);
         applyColor('laces', hex, `Veter ${i+1}`, '');
       };
       img.src=src;
