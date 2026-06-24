@@ -134,7 +134,7 @@ main{display:flex;flex:1;overflow:hidden}
         <div class="section-title">Leather</div>
         <div class="color-grid" id="grid-strap-leder"></div>
         <div class="section-title">Microfiber</div>
-        <div class="color-grid" id="grid-inner-micro"></div>
+        <div class="color-grid" id="grid-strip-micro"></div>
       </div>
 
       <!-- LACES -->
@@ -451,7 +451,7 @@ function buildLaceGrid(){
 buildColorGrid('grid-inner-leder', LEDER,  'inner');
 buildColorGrid('grid-inner-micro', MICRO,  'inner');
 buildColorGrid('grid-strap-leder', LEDER,  'strap');
-// strap-micro removed
+buildColorGrid('grid-strap-micro', MICRO, 'strap')
 buildPatternGrid();
 buildLaceGrid();
 
